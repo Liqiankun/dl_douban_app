@@ -24,7 +24,7 @@ class DLHomeMovieItem extends StatelessWidget {
 
   Widget _buildRank() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
         color: Color(0xffF1CD95),
         borderRadius: BorderRadius.circular(3),
@@ -32,7 +32,7 @@ class DLHomeMovieItem extends StatelessWidget {
       child: Text(
         'No.${movie.rank}',
         style: TextStyle(
-          fontSize: 18,
+          fontSize: 16,
           color: Color(0xff906834),
         ),
       ),
@@ -136,18 +136,18 @@ class DLHomeMovieItem extends StatelessWidget {
 
   Widget _buildWishButton() {
     return Container(
-      width: 70,
+      width: 60,
       margin: EdgeInsets.only(top: 10),
       child: Column(
         children: <Widget>[
           Image.asset(
             'assets/home/wish.png',
-            width: 34,
+            width: 30,
           ),
           Text(
             '想看',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 14,
               color: Color(0xffFFAC42),
             ),
           )
