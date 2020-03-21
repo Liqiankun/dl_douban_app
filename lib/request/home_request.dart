@@ -52,17 +52,17 @@ class MovieItem {
 }
 
 class HomeRequest {
-  static Future<List<MovieItem>> fetchMovieList(params) async {
+  static Future<Map<String, dynamic>> fetchMovieList(params) async {
     final response = await HttpRequest.request(
       '/movie/top250',
       params: params,
     );
     final subjects = response['subjects'];
-
+    final noMore = params['start'] + params['count'] >= response['total'];
     List<MovieItem> movies = [];
     for (var subject in subjects) {
       movies.add(MovieItem.fromMap(subject));
     }
-    return movies;
+    return {'movies': movies, 'noMore': noMore};
   }
 }
