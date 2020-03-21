@@ -85,27 +85,29 @@ class DLHomeMovieItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(width: 4),
-          Text.rich(TextSpan(children: [
-            WidgetSpan(
-              child: Icon(
-                Icons.play_circle_outline,
-                color: Colors.redAccent,
-                size: 24,
-              ),
-            ),
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: movie.title,
-                  style: TextStyle(fontSize: 18, color: Color(0xff333333)),
-                ),
-                TextSpan(
-                  text: '(${movie.playDate})',
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
-                ),
-              ],
-            )
-          ])),
+          RichText(
+            text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                    Icons.play_circle_outline,
+                    color: Colors.redAccent,
+                    size: 24,
+                  ),
+                  alignment: PlaceholderAlignment.middle),
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: movie.title,
+                    style: TextStyle(fontSize: 18, color: Color(0xff333333)),
+                  ),
+                  TextSpan(
+                    text: '(${movie.playDate})',
+                    style: TextStyle(color: Colors.grey, fontSize: 16),
+                  ),
+                ],
+              )
+            ]),
+          ),
           SizedBox(height: 8),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
